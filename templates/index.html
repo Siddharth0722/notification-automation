@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input Form</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <style>
+    #feedback_form {
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+      color: blue;
+    }
+  </style>
+
+  <body class="flex flex-col items-center justify-center h-screen">
+    <img src="static/Fadingballs.gif" class="hidden mb-10" id="loading" />
+    <div class="relative">
+      <div class="bg-gray-100 p-8 rounded-lg shadow-md w-120">
+        <h2 class="text-2xl font-bold mb-6 text-center">Input Form</h2>
+        <form id="input-form" method="post">
+          <div class="mb-4">
+            <label
+              for="load_id"
+              class="block text-sm font-medium text-gray-700 mb-2"
+              >Load ID</label
+            >
+            <input
+              type="text"
+              id="load_id"
+              name="load_id"
+              required
+              class="block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+          <div class="mb-4">
+            <label
+              for="trigger_name"
+              class="block text-sm font-medium text-gray-700 mb-2"
+              >Trigger Name</label
+            >
+            <select
+              id="trigger_name"
+              name="trigger_name"
+              required
+              class="block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            >
+              <option value="">Select Trigger</option>
+              <option value="NEW_LOAD_COMMENT">New Load Comment</option>
+              <option value="LOAD_NOT_ASSIGNED">Load Not Assigned</option>
+              <option value="STOP_APPOINTMENT_RESCHEDULED">
+                Time to Delivery Rescheduled
+              </option>
+              <option value="TIME_TO_DELIVERY_APPOINTMENT_V2">
+                Time to Delivery Appointment
+              </option>
+            </select>
+          </div>
+          <div class="mb-4">
+            <label
+              for="environment_type"
+              class="block text-sm font-medium text-gray-700 mb-2"
+              >Environment Type</label
+            >
+            <select
+              id="environment_type"
+              name="environment_type"
+              required
+              class="block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            >
+              <option value="">Select Environment</option>
+              <option value="production">Production</option>
+              <option value="non_production">Non Production</option>
+            </select>
+          </div>
+          <div class="flex mb-4 space-x-6">
+            <div class="flex-1">
+              <label
+                for="start_date"
+                class="block text-sm font-medium text-gray-700 mb-2"
+                >Start Date</label
+              >
+              <input
+                type="date"
+                id="start_date"
+                name="start_date"
+                required
+                class="block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
+            <div class="flex-1">
+              <label
+                for="start_time"
+                class="block text-sm font-medium text-gray-700 mb-2"
+                >Start Time (HH:MM:SS)</label
+              >
+              <input
+                type="text"
+                id="start_time"
+                name="start_time"
+                pattern="([01]\d|2[0-3]):([0-5]\d):([0-5]\d)"
+                required
+                class="block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="00:00:00"
+                title="Enter time in HH:MM:SS format, e.g., 14:30:45"
+              />
+            </div>
+          </div>
+          <div class="flex mb-4 space-x-6">
+            <div class="flex-1">
+              <label
+                for="end_date"
+                class="block text-sm font-medium text-gray-700 mb-2"
+                >End Date</label
+              >
+              <input
+                type="date"
+                id="end_date"
+                name="end_date"
+                required
+                class="block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
+            <div class="flex-1">
+              <label
+                for="end_time"
+                class="block text-sm font-medium text-gray-700 mb-2"
+                >End Time (HH:MM:SS)</label
+              >
+              <input
+                type="text"
+                id="end_time"
+                name="end_time"
+                pattern="([01]\d|2[0-3]):([0-5]\d):([0-5]\d)"
+                required
+                class="block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="00:00:00"
+                title="Enter time in HH:MM:SS format, e.g., 14:30:45"
+              />
+            </div>
+          </div>
+          <div>
+            <button
+              type="submit"
+              class="w-full p-3 bg-blue-500 text-white rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            >
+              Submit
+            </button>
+            <a href="feedbackform" id="feedback_form">Feedback Form</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      const reset = () => {
+        document.getElementById("loading").classList.add("hidden");
+        document.getElementById("load_id").value = "";
+        document.getElementById("trigger_name").value = "";
+        document.getElementById("environment_type").value = "";
+        document.getElementById("start_date").value = "";
+        document.getElementById("start_time").value = "";
+        document.getElementById("end_date").value = "";
+        document.getElementById("end_time").value = "";
+      };
+
+      document
+        .getElementById("input-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const loadId = document.getElementById("load_id").value;
+          const triggerName = document.getElementById("trigger_name").value;
+          const environmentType = document.getElementById("environment_type").value;
+          const startDate = document.getElementById("start_date").value;
+          const startTime = document.getElementById("start_time").value;
+          const endDate = document.getElementById("end_date").value;
+          const endTime = document.getElementById("end_time").value;
+
+          document.getElementById("loading").classList.remove("hidden");
+
+          const data = {
+            load_id: loadId,
+            trigger_name: triggerName,
+            environment_type: environmentType,
+            start_date: startDate,
+            start_time: startTime,
+            end_date: endDate,
+            end_time: endTime,
+          };
+
+          fetch("/debugging_loads", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              reset();
+              alert(data.message);
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              reset();
+              alert("Error submitting form.");
+            });
+        });
+    </script>
+  </body>
+</html>

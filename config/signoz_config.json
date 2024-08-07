@@ -1,0 +1,8 @@
+{
+    "non_prod_base_url": "http://telemetry-np.fourkites.com",
+    "prod_base_url": "http://telemetry.fourkites.com",
+    "search_url": "/api/v3/query_range",
+    "login_url": "/api/v1/login",
+    "email": "automation@fourkites.com",
+    "password": "P@ssw0rd!"
+}

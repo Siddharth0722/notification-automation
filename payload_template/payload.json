@@ -1,0 +1,40 @@
+{
+  "variables": {},
+  "compositeQuery": {
+    "queryType": "builder",
+    "panelType": "list",
+    "builderQueries": {
+      "A": {
+        "dataSource": "logs",
+        "queryName": "A",
+        "aggregateOperator": "noop",
+        "aggregateAttribute": {
+          "id": "------false",
+          "dataType": "",
+          "key": "",
+          "isColumn": false,
+          "type": "",
+          "isJSON": false
+        },
+        "timeAggregation": "rate",
+        "spaceAggregation": "sum",
+        "functions": [],
+        "filters": {
+          "items": [],
+          "op": "AND"
+        },
+        "expression": "A",
+        "disabled": false,
+        "having": [],
+        "stepInterval": 1980,
+        "limit": null,
+        "orderBy": [{ "columnName": "timestamp", "order": "desc" }],
+        "groupBy": [],
+        "legend": "",
+        "reduceTo": "avg",
+        "offset": 0,
+        "pageSize": 100
+      }
+    }
+  }
+}

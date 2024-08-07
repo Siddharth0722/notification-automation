@@ -1,0 +1,9 @@
+{
+    "Load Not Assigned":"LOAD_NOT_ASSIGNED",
+    "Load Not Picked Up":"LOAD_NOT_PICKED_UP",
+    "Time to Pickup Appointment":"TIME_TO_PICKUP_APPOINTMENT",
+    "Arrived at Pickup":"ARRIVED_AT_PICKUP",
+    "Arrived at Delivery":"ARRIVED_AT_DELIVERY",
+    "Time to Delivery Appointment":"TIME_TO_DELIVERY_APPOINTMENT",
+    "New Load Comment":"NEW_LOAD_COMMENT"
+}

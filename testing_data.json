@@ -1,0 +1,22 @@
+[
+    {
+        "message_type":"LOAD_NOT_ASSIGNED",
+        "load_id":13376315,
+        "timeStamp":"2 day"
+    },
+    {
+        "message_type":"NEW_LOAD_COMMENT",
+        "load_id":13121495,
+        "timeStamp":"4 days"
+    },
+    {
+        "message_type":"STOP_APPOINTMENT_RESCHEDULED",
+        "load_id":13382783,
+        "timeStamp":"2 day"
+    },
+    {
+        "message_type":"TIME_TO_DELIVERY_APPOINTMENT_V2",
+        "load_id":13372335,
+        "timeStamp":"2 day"
+    }
+]
